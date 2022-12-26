@@ -1,21 +1,22 @@
-
 import { FaHome, FaSearch, FaUser } from "react-icons/fa";
+import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
 function TopNavButtons() {
-    return ( 
-        <div className="top-nav-buttons">
-            <button className="btn btn-primary">
-                <FaHome />
-            </button>
-            <button className="btn btn-primary">
-                <FaSearch />
-            </button>
-            <button className="btn btn-primary">
-                <FaUser />
-            </button>
-        </div>
-
-     );
+  return (
+    <Tabs variant="soft-rounded" colorScheme="green">
+      <TabList>
+        <Tab>
+          <FaHome />
+        </Tab>
+        <Tab>
+          <FaSearch />
+        </Tab>
+        <Tab>
+          <FaUser />
+        </Tab>
+      </TabList>
+    </Tabs>
+  );
 }
 
 export default TopNavButtons;

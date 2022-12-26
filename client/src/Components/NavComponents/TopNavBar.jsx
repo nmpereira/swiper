@@ -1,12 +1,12 @@
-import TopNavButtons from './TopNavButtons';
+import TopNavButtons from "./TopNavButtons";
+import { Center } from "@chakra-ui/react";
 
 function TopNavBar() {
-    return ( 
-        <div className="top-nav-bar">
-            <TopNavButtons />
-        </div>
-        
-     );
+  return (
+    <Center p="3">
+      <TopNavButtons />
+    </Center>
+  );
 }
 
 export default TopNavBar;

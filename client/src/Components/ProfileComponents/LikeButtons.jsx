@@ -1,15 +1,18 @@
 import { FaHeart, FaHeartBroken } from "react-icons/fa";
+import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
 function LikeButtons() {
   return (
-    <div className="like-buttons">
-      <button className="btn btn-primary">
-        <FaHeart />
-      </button>
-      <button className="btn btn-primary">
-        <FaHeartBroken />
-      </button>
-    </div>
+    <Tabs variant="soft-rounded" colorScheme="green" pt="3">
+      <TabList>
+        <Tab>
+          <FaHeart />
+        </Tab>
+        <Tab>
+          <FaHeartBroken />
+        </Tab>
+      </TabList>
+    </Tabs>
   );
 }
 
