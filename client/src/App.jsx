@@ -8,12 +8,35 @@ import { Center } from "@chakra-ui/react";
 import { Card, CardHeader, CardBody, CardFooter, Box } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
+import Settings from "./Components/SettingsComponents/Settlings";
+import Likes from "./Components/Likes/Likes";
 
 function App() {
-  const [view, setView] = useState("userCard");
+  const [view, setView] = useState(viewList.card);
 
   const changeView = (view) => {
     setView(view);
+  };
+
+  const appView = () => {
+    switch (view) {
+      case viewList.chat:
+        console.log("chat");
+        return <ChatBox />;
+      case viewList.card:
+        console.log("card");
+        return <UserCard />;
+      case viewList.appSettings:
+        console.log("settings");
+        return <Settings />;
+
+      case viewList.likes:
+        console.log("likes");
+        return <Likes />;
+      default:
+        console.log("default");
+        return <UserCard />;
+    }
   };
 
   return (
@@ -28,7 +51,7 @@ function App() {
 
               <TopNavBar />
 
-              <Card>{view === "userCard" ? <UserCard /> : <ChatBox />}</Card>
+              <Card>{appView()}</Card>
 
               <BottomNavBar
                 changeView={(view) => changeView(view)}
@@ -41,7 +64,11 @@ function App() {
     </ChakraProvider>
   );
 }
-
-// styles
+export const viewList = {
+  chat: "chatBox",
+  card: "userCard",
+  appSettings: "appSettings",
+  likes: "likes",
+};
 
 export default App;

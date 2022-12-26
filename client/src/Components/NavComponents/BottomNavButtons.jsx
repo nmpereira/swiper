@@ -1,31 +1,32 @@
-import { FaHome, FaSearch, FaUser } from "react-icons/fa";
+import { FaHome, FaSearch, FaUsers } from "react-icons/fa";
+import { AiFillHeart } from "react-icons/ai";
 import { BsFillChatLeftDotsFill } from "react-icons/bs";
 import { AiTwotoneSetting } from "react-icons/ai";
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
+import { viewList } from "../../App";
+import { Tooltip } from "@chakra-ui/react";
 
 function BottomNavButtons(props) {
   return (
     <Tabs variant="soft-rounded" colorScheme="green">
       <TabList>
-        <Tab>
-          <FaHome />
+        <Tab onClick={() => props.changeView(viewList.card)}>
+          <FaUsers />
         </Tab>
-        <Tab>
-          <FaSearch />
-        </Tab>
-        <Tab>
-          <FaUser />
+        <Tab onClick={() => props.changeView(viewList.likes)}>
+          <AiFillHeart />
         </Tab>
         <Tab
           onClick={() =>
-            props.currentView === "chatBox"
-              ? props.changeView("userCard")
-              : props.changeView("chatBox")
+            // props.currentView === viewList.chatBox
+            //   ? props.changeView(viewList.chatBox)
+            //   : props.changeView(viewList.card)
+            props.changeView(viewList.chat)
           }
         >
           <BsFillChatLeftDotsFill />
         </Tab>
-        <Tab>
+        <Tab onClick={() => props.changeView(viewList.appSettings)}>
           <AiTwotoneSetting />
         </Tab>
       </TabList>
