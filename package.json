@@ -1,0 +1,26 @@
+{
+  "name": "swiper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "framer-motion": "^8.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm install && npm run build",
+    "start": "npm start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmpereira/swiper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmpereira/swiper/issues"
+  },
+  "homepage": "https://github.com/nmpereira/swiper#readme"
+}
