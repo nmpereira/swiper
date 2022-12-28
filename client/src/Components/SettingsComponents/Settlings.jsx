@@ -5,27 +5,17 @@ import {
   FormControl,
   InputGroup,
   Button,
+  Text,
 } from "@chakra-ui/react";
+
+import SettingInputs from "./SettingInputs";
 function Settings() {
   return (
     <Card minH="600" maxH="600" overflowY="auto">
       <Center>
         <h1>Settings</h1>
       </Center>
-      <Center>
-        <FormControl mt="3">
-          <Center>
-            <InputGroup size="md">
-              <Input
-                type="text"
-                placeholder="Type a message..."
-                fontSize="10"
-                size="md"
-              />
-            </InputGroup>
-          </Center>
-        </FormControl>
-      </Center>
+      <SettingInputs />
     </Card>
   );
 }
