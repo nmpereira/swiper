@@ -43,7 +43,7 @@ function App() {
     <ChakraProvider>
       <Box>
         <Center>
-          <Card maxW="sm" maxH="800" h="600" pt="5">
+          <Card maxW="sm" maxH="800" pt="5" minW="385">
             <div className="App">
               <Center>
                 <h1>Chat App</h1>
@@ -51,7 +51,9 @@ function App() {
 
               <TopNavBar />
 
-              <Card>{appView()}</Card>
+              <Card maxH="600" minH="600">
+                {appView()}
+              </Card>
 
               <BottomNavBar
                 changeView={(view) => changeView(view)}

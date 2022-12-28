@@ -4,18 +4,18 @@ import { useState } from "react";
 
 function Message(props) {
   return (
-    <Box pt="2">
+    <Box pt="2" m="2">
       {props.currentUser ? (
         <Box display="flex" alignItems="center">
-          <UserImage />
+          <UserImage src={props.imageSrc} />
           <Tag
             size="sm"
             colorScheme="green"
             borderRadius="full"
-            p="5"
+            p="2"
             textAlign="center"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            {props.message}
           </Tag>
         </Box>
       ) : (
@@ -24,15 +24,12 @@ function Message(props) {
             size="sm"
             colorScheme="blue"
             borderRadius="full"
-            p="5"
+            p="2"
             textAlign="center"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Quisquam,
+            {props.message}
           </Tag>
-          <UserImage />
+          <UserImage src={props.imageSrc} />
         </Box>
       )}
     </Box>

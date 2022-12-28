@@ -6,14 +6,57 @@ import Message from "./Message";
 function Messages() {
   const [currentUser, setCurrentUser] = useState(true);
   return (
-    <Box overflowY="auto" maxH="300">
-      <Message currentUser={true} />
-      <Message currentUser={false} /> <Message currentUser={true} />
-      <Message currentUser={false} /> <Message currentUser={true} />
-      <Message currentUser={false} /> <Message currentUser={true} />
-      <Message currentUser={false} /> <Message currentUser={true} />
-      <Message currentUser={false} /> <Message currentUser={true} />
-      <Message currentUser={false} />
+    <Box overflowY="auto" bgColor="lightgrey" maxH="500" minH="500">
+      <Message
+        message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        imageSrc="https://bit.ly/dan-abramov"
+        currentUser={true}
+      />
+      <Message
+        currentUser={false}
+        message="consectetur adipiscing elit"
+        imageSrc="https://bit.ly/kent-c-dodds"
+      />{" "}
+      <Message
+        message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        imageSrc="https://bit.ly/dan-abramov"
+        currentUser={true}
+      />
+      <Message
+        currentUser={false}
+        message="consectetur adipiscing elit"
+        imageSrc="https://bit.ly/kent-c-dodds"
+      />{" "}
+      <Message
+        message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        imageSrc="https://bit.ly/dan-abramov"
+        currentUser={true}
+      />
+      <Message
+        currentUser={false}
+        message="consectetur adipiscing elit"
+        imageSrc="https://bit.ly/kent-c-dodds"
+      />{" "}
+      <Message
+        message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        imageSrc="https://bit.ly/dan-abramov"
+        currentUser={true}
+      />
+      <Message
+        currentUser={false}
+        message="consectetur adipiscing elit"
+        imageSrc="https://bit.ly/kent-c-dodds"
+      />{" "}
+      <Message
+        message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+        imageSrc="https://bit.ly/dan-abramov"
+        currentUser={true}
+      />
+      <Message
+        currentUser={false}
+        message="consectetur adipiscing elit"
+        imageSrc="https://bit.ly/kent-c-dodds"
+      />
     </Box>
   );
 }

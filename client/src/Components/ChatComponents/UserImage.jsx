@@ -1,10 +1,10 @@
-import { Avatar, Tag } from "@chakra-ui/react";
-function UserImage() {
+import { Avatar, Tag, AvatarBadge } from "@chakra-ui/react";
+function UserImage(props) {
   return (
     <Avatar
       size="sm"
       name="Dan Abrahmov"
-      src="https://bit.ly/dan-abramov"
+      src={props.src ? props.src : "https://picsum.photos/200/300"}
       m="1"
     />
   );

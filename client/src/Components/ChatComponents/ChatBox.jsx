@@ -5,12 +5,20 @@ import Messages from "./Messages";
 
 function ChatBox() {
   return (
-    <Tag h="300" maxH="600">
+    <Tag
+      h="400"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      maxH="600"
+      minH="600"
+    >
       <Center>
         <Messages />
       </Center>
-
-      <Center>{/* <ChatInput /> */}</Center>
+      <Center>
+        <ChatInput />
+      </Center>
     </Tag>
   );
 }

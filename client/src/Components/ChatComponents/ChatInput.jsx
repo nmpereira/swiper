@@ -6,19 +6,32 @@ import {
   FormControl,
   Input,
   Button,
+  InputRightElement,
+  InputGroup,
 } from "@chakra-ui/react";
+import { AiOutlineSend } from "react-icons/ai";
 
 function ChatInput() {
   return (
-    // <div className="chat-input">
-    //   <form>
-    //     <input type="text" placeholder="Type a message..." />
-    //     <button type="submit">Send</button>
-    //   </form>
-    // </div>
-    <FormControl>
-      <Input type="text" placeholder="Type a message..." fontSize="10" />
-      <Button type="submit">Send</Button>
+    <FormControl mt="3">
+      <Center>
+        <InputGroup size="md">
+          <Input
+            type="text"
+            placeholder="Type a message..."
+            fontSize="10"
+            size="md"
+          />
+          <InputRightElement>
+            <Button
+              size="sm"
+              colorScheme="twitter"
+              rightIcon={<AiOutlineSend />}
+              mr="1"
+            />
+          </InputRightElement>
+        </InputGroup>
+      </Center>
     </FormControl>
   );
 }

@@ -3,7 +3,7 @@ import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
 function LikeButtons() {
   return (
-    <Tabs variant="soft-rounded" colorScheme="green" pt="3">
+    <Tabs variant="soft-rounded" colorScheme="green" pt="3" pb="3">
       <TabList>
         <Tab>
           <FaHeart />
