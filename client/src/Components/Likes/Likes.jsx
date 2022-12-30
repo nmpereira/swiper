@@ -1,49 +1,32 @@
-import { Avatar } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Like from "./Like";
 
 function Likes() {
   return (
-    <div className="likes">
-      <div className="likes__container">
-        <div className="likes__container__header">
-          <h1>Likes</h1>
-        </div>
-        <div className="likes__container__body">
-          <div className="likes__container__body__card">
-            <div className="likes__container__body__card__image">
-              <Avatar
-                size="lg"
-                name="Dan Abrahmov"
-                src="https://picsum.photos/200/300"
-                m="1"
-              />
-            </div>
-            <div className="likes__container__body__card__name">
-              <h1>John Doe</h1>
-            </div>
-            <div className="likes__container__body__card__button">
-              <button className="btn btn-primary">Like</button>
-            </div>
-          </div>
-
-          <div className="likes__container__body__card">
-            <div className="likes__container__body__card__image">
-              <Avatar
-                size="lg"
-                name="Dan Abrahmov"
-                src="https://picsum.photos/200/300"
-                m="1"
-              />
-            </div>
-            <div className="likes__container__body__card__name">
-              <h1>John Doe</h1>
-            </div>
-            <div className="likes__container__body__card__button">
-              <button className="btn btn-primary">Like</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Box overflowY="auto">
+      <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" /> <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" /> <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" /> <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" /> <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" /> <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" /> <Like user="uno" />
+      <Like user="dos" />
+      <Like user="tres" />
+      <Like user="quatro" />
+    </Box>
   );
 }
 

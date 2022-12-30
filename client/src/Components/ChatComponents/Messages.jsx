@@ -10,52 +10,62 @@ function Messages() {
       <Message
         message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
         imageSrc="https://bit.ly/dan-abramov"
+        name="Dan Abrahmov"
         currentUser={true}
       />
       <Message
         currentUser={false}
         message="consectetur adipiscing elit"
         imageSrc="https://bit.ly/kent-c-dodds"
+        name="Kent C Dodds"
       />{" "}
       <Message
         message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
         imageSrc="https://bit.ly/dan-abramov"
+        name="Dan Abrahmov"
         currentUser={true}
       />
       <Message
         currentUser={false}
         message="consectetur adipiscing elit"
         imageSrc="https://bit.ly/kent-c-dodds"
+        name="Kent C Dodds"
       />{" "}
       <Message
         message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
         imageSrc="https://bit.ly/dan-abramov"
+        name="Dan Abrahmov"
         currentUser={true}
       />
       <Message
         currentUser={false}
         message="consectetur adipiscing elit"
         imageSrc="https://bit.ly/kent-c-dodds"
+        name="Kent C Dodds"
       />{" "}
       <Message
         message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
         imageSrc="https://bit.ly/dan-abramov"
+        name="Dan Abrahmov"
         currentUser={true}
       />
       <Message
         currentUser={false}
         message="consectetur adipiscing elit"
         imageSrc="https://bit.ly/kent-c-dodds"
+        name="Kent C Dodds"
       />{" "}
       <Message
         message="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
         imageSrc="https://bit.ly/dan-abramov"
+        name="Dan Abrahmov"
         currentUser={true}
       />
       <Message
         currentUser={false}
         message="consectetur adipiscing elit"
         imageSrc="https://bit.ly/kent-c-dodds"
+        name="Kent C Dodds"
       />
     </Box>
   );

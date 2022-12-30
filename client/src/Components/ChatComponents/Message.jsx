@@ -7,7 +7,7 @@ function Message(props) {
     <Box pt="2" m="2">
       {props.currentUser ? (
         <Box display="flex" alignItems="center">
-          <UserImage src={props.imageSrc} />
+          <UserImage src={props.imageSrc} size="sm" name="Dan Abrahmov" m="1" />
           <Tag
             size="sm"
             colorScheme="green"
