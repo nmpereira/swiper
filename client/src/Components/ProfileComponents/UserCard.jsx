@@ -5,6 +5,8 @@ import { Center, Box, Card } from "@chakra-ui/react";
 import UserInterests from "./UserInterests";
 import UserInfo from "./UserInfo";
 import TinderCard from "react-tinder-card";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const onSwipe = (direction) => {
   console.log("You swiped: " + direction);
@@ -15,6 +17,18 @@ const onCardLeftScreen = (myIdentifier) => {
 };
 
 function UserCard() {
+  const [response, setResponse] = useState(null);
+
+  useEffect(() => {
+    console.log("view changed");
+
+    const getResponse = async () => {
+      const res = await axios.get("/userCard");
+      console.log("response from server: ", JSON.stringify(res.data));
+      setResponse(res.data);
+    };
+    getResponse();
+  }, []);
   return (
     <Box p="5">
       <TinderCard
@@ -29,19 +43,21 @@ function UserCard() {
           </Center>
           <Box>
             <UserInfo
-              name="John Doe"
-              title="Software Engineer"
-              status="Employed"
-              age="25"
-              location="New York, USA"
+              name={response?.name ? response.name : "No Name"}
+              title={response?.title ? response.title : "No Title"}
+              status={response?.status ? response.status : "No Status"}
+              age={response?.age ? response.age : "No Age"}
+              location={response?.location ? response.location : "No Location"}
             />
           </Box>
           <Box>
             <Center textAlign="center">
-              <ProfileBio />
+              <ProfileBio bio={response?.bio ? response.bio : "No Bio"} />
             </Center>
             <Center>
-              <UserInterests interests={["abc", "def"]} />
+              <UserInterests
+                interests={[...(response?.hobbies ? response.hobbies : [])]}
+              />
             </Center>
           </Box>
         </Card>

@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import Settings from "./Components/SettingsComponents/Settlings";
 import Likes from "./Components/Likes/Likes";
 
+import axios from "axios";
+
 function App() {
   const [view, setView] = useState(viewList.card);
 
