@@ -17,7 +17,7 @@ const config = {
   authRequired: false,
   auth0Logout: false,
   secret: process.env.Auth0_secret,
-  baseURL: "http://localhost:5000/",
+  baseURL: process.env.baseURL,
   clientID: process.env.Auth0_clientID,
   issuerBaseURL: "https://100chats.us.auth0.com",
 };
