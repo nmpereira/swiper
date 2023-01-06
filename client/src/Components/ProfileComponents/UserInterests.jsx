@@ -1,4 +1,5 @@
 import { Box, Tag } from "@chakra-ui/react";
+import { v4 as uuid } from "uuid";
 
 function UserInterests(props) {
   return (
@@ -7,7 +8,7 @@ function UserInterests(props) {
         {/* show each interest in the array */}
         {props.interests.map((interest) => {
           return (
-            <Tag size="md" colorScheme="blue" m="1">
+            <Tag size="md" key={uuid()} colorScheme="blue" m="1">
               {interest}
             </Tag>
           );

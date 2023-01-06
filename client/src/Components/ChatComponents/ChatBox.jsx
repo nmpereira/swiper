@@ -1,7 +1,7 @@
 import ChatInput from "./ChatInput";
 import { Avatar, Tag, Center } from "@chakra-ui/react";
 import UserImage from "./UserImage";
-import Messages from "./Messages";
+import { Messages } from "./Messages";
 
 function ChatBox() {
   return (
