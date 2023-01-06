@@ -24,6 +24,7 @@ const config = {
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
+app.set("trust proxy", true);
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
