@@ -7,13 +7,12 @@
     "node": "14.17.6"
   },
   "dependencies": {
-    "axios": "^1.2.2",
-    "framer-motion": "^8.0.2"
+    "axios": "^1.2.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node server/server.js",
     "start-server": "nodemon server/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run start-server\" \"npm run client\"",

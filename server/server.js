@@ -6,14 +6,10 @@ const { logger } = require("./helpers/logger");
 const { connectDB } = require("./models/db");
 const chat = require("./routes/chatRoutes");
 const path = require("path");
-
+app.use(logger);
 // cors
 const cors = require("cors");
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 
 const { auth } = require("express-openid-connect");
 
@@ -33,28 +29,36 @@ app.use(express.static(path.join(__dirname, "../client/build")));
 
 // req.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
-  // serve react app for prod vs dev
-  console.log("req.oidc.user", req.oidc.user);
-  if (req.oidc.isAuthenticated()) {
-    console.log("logged in");
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  if (!req.oidc.isAuthenticated()) {
+    console.log("Not authenticated");
+    res.json({ msg: "Not authenticated" });
   } else {
-    res.json("Logged out");
-  }
+    // console.log("req.oidc.user", req.oidc.user);
 
-  // console.log("req.oidc.user", req.oidc.user);
-  // if (req.oidc.isAuthenticated()) {
-  //   res.status(200).send("Logged in");
-  // } else {
-  //   res.status(401).send("Logged out");
-  // }
+    if (process.env.NODE_ENV === "production") {
+      if (req.oidc.isAuthenticated()) {
+        console.log("logged in");
+        res.sendFile(path.join(__dirname, "../client/build/index.html"));
+      }
+    } else {
+      res.redirect("http://localhost:3000");
+    }
+  }
+});
+
+// is authenticated
+app.get("/isAuthenticated", (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    res.json({ msg: "Logged in", isAuthenticated: true });
+  } else {
+    res.json({ msg: "Logged out", isAuthenticated: false });
+  }
 });
 
 // // dotenv setup
 app.use(express.json()); // Used to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies using qs library
 
-app.use(logger);
 connectDB();
 
 app.use("/chat", chat);
@@ -64,7 +68,7 @@ app.listen(port, () => {
 });
 
 app.get("/userCard", (req, res) => {
-  console.log("req.oidc.user", req.oidc.user);
+  // console.log("req.oidc.user", req.oidc.user);
   if (req.oidc.isAuthenticated()) {
     res.json({
       message: "Showing userCard!",
@@ -77,6 +81,6 @@ app.get("/userCard", (req, res) => {
       title: "Software Engineer",
     });
   } else {
-    res.redirect();
+    res.json({ msg: "Not logged in" });
   }
 });
